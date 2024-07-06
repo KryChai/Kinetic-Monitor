@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YTXSFragment">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="48dp"
+        android:src="@drawable/ywqz_gif" />
+
+    <Button
+        android:id="@+id/ywqz_begin"
+        android:layout_width="130dp"
+        android:layout_height="96dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="161dp"
+        android:text="开始训练"/>
+
+</FrameLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".Home">-->
+<!--    &lt;!&ndash;<?xml version="1.0" encoding="utf-8"?>&ndash;&gt;-->
+<!--    &lt;!&ndash;<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+<!--    &lt;!&ndash;    xmlns:tools="http://schemas.android.com/tools"&ndash;&gt;-->
+<!--    &lt;!&ndash;    android:layout_width="match_parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;    android:layout_height="match_parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;    android:orientation="vertical"&ndash;&gt;-->
+<!--    &lt;!&ndash;    android:gravity="center_horizontal"&ndash;&gt;-->
+<!--    &lt;!&ndash;    tools:context=".DQFragment">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;&ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/hello_blank_fragment"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/ywqz_begin"-->
+<!--        android:layout_width="112dp"-->
+<!--        android:layout_height="109dp"-->
+<!--        android:layout_marginBottom="161dp"-->
+<!--        android:text="开始训练"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--    &lt;!&ndash;</FrameLayout>&ndash;&gt;-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

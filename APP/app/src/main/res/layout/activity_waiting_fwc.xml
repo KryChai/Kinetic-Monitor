@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Waiting_FWC">
+    <VideoView
+        android:id="@+id/fwc_videoView"
+        android:layout_width="322dp"
+        android:layout_height="548dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/fwc_textView2"
+        android:layout_width="268dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="48dp"
+        android:textColor="#884C207E"
+        android:text="正在等待服务器数据分析"
+        android:textSize="60px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/fwc_textView3"
+        android:layout_width="150dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="2dp"
+        android:text="浅梦朋"
+        android:textSize="60px"
+        android:textStyle="bold"
+        android:textColor="#883E1967"
+        app:layout_constraintBottom_toTopOf="@+id/fwc_videoView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

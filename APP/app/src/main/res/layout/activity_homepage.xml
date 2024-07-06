@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/wdzy_back" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/linen">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/title_bg"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/man"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:maxWidth="20dp"
+                    android:src="@drawable/image_touxiang" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/homepage_nicheng"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=" 浅梦朋"
+                        android:textSize="20sp"
+                        android:textColor="@color/fuxk_base_color_cyan" />
+                    <TextView
+                        android:id="@id/homepage_tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text=" 用户名"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"/>
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_background_2"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="身高" />
+                <EditText
+                    android:id="@+id/homepage_et_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="体重" />
+                <EditText
+                    android:id="@+id/homepage_et_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="目标体重" />
+                <EditText
+                    android:id="@+id/homepage_et_target_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="年龄" />
+                <EditText
+                    android:id="@+id/homepage_et_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="性别" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <RadioGroup
+                        android:id="@+id/homepage_radio_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/homepage_rd_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_margin="2.67dip"
+                            android:checked="true"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="2.67dip"
+                            android:paddingRight="2.67dip"
+                            android:text="男" />
+                        <RadioButton
+                            android:id="@+id/homepage_rd_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dip"
+                            android:layout_margin="2.67dip"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="2.67dip"
+                            android:paddingRight="2.67dip"
+                            android:text="女" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@id/homepage_btn_update"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_background_3"
+                android:gravity="center"
+                android:text="保存修改"
+                android:textColor="@color/white"
+                android:textSize="15.0sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

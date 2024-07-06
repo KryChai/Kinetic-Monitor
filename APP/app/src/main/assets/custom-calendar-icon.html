@@ -1,0 +1,152 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=custom-calendar-icon
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+  </style>
+
+</head>
+<body>
+<div id="container" style="height: 100%"></div>
+
+
+<script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+
+
+<script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    const layouts = [
+  [[0, 0]],
+  [
+    [-0.25, 0],
+    [0.25, 0]
+  ],
+  [
+    [0, -0.2],
+    [-0.2, 0.2],
+    [0.2, 0.2]
+  ],
+  [
+    [-0.25, -0.25],
+    [-0.25, 0.25],
+    [0.25, -0.25],
+    [0.25, 0.25]
+  ]
+];
+const colors = ['#c4332b', '#16B644', '#6862FD', '#FDC763'];
+function getVirtulData(year) {
+  year = year || '2024';
+  let date = +echarts.number.parseDate(year + '-01-01');
+  let end = +echarts.number.parseDate(+year + 1 + '-01-01');
+  let dayTime = 3600 * 24 * 1000;
+  let data = [];
+  for (let time = date; time < end; time += dayTime) {
+    let items = [];
+    let eventCount = Math.round(Math.random() * 2); // 只有两种打卡状态，0表示未打卡，1表示已打卡
+    for (let i = 0; i < eventCount; i++) {
+      items.push(0); // 使用同一个图标表示打卡状态
+    }
+    data.push([echarts.format.formatTime('yyyy-MM-dd', time), items]);
+  }
+  return data;
+}
+option = {
+  tooltip: {},
+  calendar: [
+    {
+      left: 'center',
+      top: 'middle',
+      cellSize: [70, 70],
+      yearLabel: { show: false },
+      orient: 'vertical',
+      dayLabel: {
+        firstDay: 1,
+        nameMap: 'cn'
+      },
+      monthLabel: {
+        show: false
+      },
+      range: '2024-04'
+    }
+  ],
+  series: [
+    {
+      type: 'custom',
+      coordinateSystem: 'calendar',
+      renderItem: function (params, api) {
+        const cellPoint = api.coord(api.value(0));
+        const cellWidth = params.coordSys.cellWidth;
+        const cellHeight = params.coordSys.cellHeight;
+        const value = api.value(1);
+        const events = value;
+        if (isNaN(cellPoint[0]) || isNaN(cellPoint[1])) {
+          return;
+        }
+        const group = {
+          type: 'group',
+          children:
+            (events || []).map(function (
+              itemLayout,
+              index
+            ) {
+              return {
+                type: 'circle',
+                shape: {
+                  cx: cellPoint[0] + cellWidth / 2,
+                  cy: cellPoint[1] + cellHeight / 2,
+                  r: 10 // 半径为10，表示一个小圆圈
+                },
+                position: [
+                  cellPoint[0] + cellWidth / 2,
+                  cellPoint[1] + cellHeight / 2
+                ],
+                style: api.style({
+                  fill: itemLayout === 0 ? '#ccc' : colors[itemLayout]
+                })
+              };
+            }) || []
+        };
+        group.children.push({
+          type: 'text',
+          style: {
+            x: cellPoint[0] + cellWidth / 2,
+            y: cellPoint[1] + cellHeight / 2,
+            text: echarts.format.formatTime('dd', api.value(0)),
+            fill: '#777',
+            textFont: api.font({ fontSize: 14 }),
+            textAlign: 'center',
+            textVerticalAlign: 'middle'
+          }
+        });
+        return group;
+      },
+      dimensions: [undefined, { type: 'ordinal' }],
+      data: getVirtulData('2024')
+    }
+  ]
+};
+
+if (option && typeof option === 'object') {
+  myChart.setOption(option);
+}
+
+window.addEventListener('resize', myChart.resize);
+</script>
+</body>
+</html>

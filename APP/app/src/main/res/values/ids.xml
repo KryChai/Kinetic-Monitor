@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--我的-->
+    <item name="me_homepage_username" type="id"></item>
+    <item name="me_homepage" type="id"></item>
+    <item name="me_exercise_time" type="id"></item>
+    <item name="me_record_days" type="id"></item>
+    <item name="me_item_orders" type="id"></item>
+    <item name="me_item_comment" type="id"></item>
+    <item name="me_item_reord" type="id"></item>
+    <item name="me_item_metabolize" type="id"></item>
+    <item name="me_item_calorie" type="id"></item>
+    <item name="me_item_favor" type="id"></item>
+    <item name="me_item_exit" type="id"></item>
+    <!--我的-->
+
+    <!--主页-->
+    <item name="homepage_tv_username" type="id" ></item>
+    <item name="homepage_et_height" type="id" ></item>
+    <item name="homepage_et_weight" type="id" ></item>
+    <item name="homepage_et_target_weight" type="id" />
+    <item name="homepage_et_age" type="id" ></item>
+    <item name="homepage_radio_sex" type="id"  ></item>
+    <item name="homepage_btn_update" type="id"  ></item>
+    <item name="homepage_rd_male" type="id"  ></item>
+    <item name="homepage_rd_female" type="id"  ></item>
+    <item name="homepage_tv_wallet" type="id"  ></item>
+    <item name="homepage_tv_integral" type="id"  ></item>
+    <!--主页-->
+
+    <item name="share_layout" type="id"></item>
+    <item name="web_share_btn" type="id"></item>
+    <item name="web_share_close" type="id"></item>
+    <item name="web_share_more" type="id"></item>
+    <item name="web_share_edit" type="id"></item>
+    <item name="titleRightButton" type="id"></item>
+    <item name="title_back" type="id"></item>
+    <item name="titleText" type="id"></item>
+
+
+
+
+
+</resources>

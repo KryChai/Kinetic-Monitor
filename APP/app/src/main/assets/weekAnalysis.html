@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+    }
+    #container {
+      background-color: #FFDEAD; /* 设置背景颜色为淡淡的米黄色 */
+      border-radius: 60px; /* 设置圆角 */
+    }
+  </style>
+</head>
+<body>
+<div id="container" style="height: 100%"></div> <!-- 添加 ID 为 container 的 div 容器 -->
+
+<script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+
+<script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    var option;
+
+    var series = [
+      {
+        data: [10, 30, 5, 50, 30, 0, 25],
+        type: 'bar',
+        stack: 'a',
+        name: '俯卧撑'
+      },
+      {
+        data: [30, 40, 64, 20, 30, 50, 80],
+        type: 'bar',
+        stack: 'a',
+        name: '仰卧起坐'
+      },
+      {
+        data: [70, 60, 100, 40, 80, 60, 10],
+        type: 'bar',
+        stack: 'a',
+        name: '蹲起'
+      },
+
+    ];
+
+    const stackInfo = {};
+    for (let i = 0; i < series[0].data.length; ++i) {
+      for (let j = 0; j < series.length; ++j) {
+        const stackName = series[j].stack;
+        if (!stackName) {
+          continue;
+        }
+        if (!stackInfo[stackName]) {
+          stackInfo[stackName] = {
+            stackStart: [],
+            stackEnd: []
+          };
+        }
+        const info = stackInfo[stackName];
+        const data = series[j].data[i];
+        if (data && data !== '-') {
+          if (info.stackStart[i] == null) {
+            info.stackStart[i] = j;
+          }
+          info.stackEnd[i] = j;
+        }
+      }
+    }
+
+    for (let i = 0; i < series.length; ++i) {
+      const data = series[i].data;
+      const info = stackInfo[series[i].stack];
+      for (let j = 0; j < series[i].data.length; ++j) {
+        const isEnd = info.stackEnd[j] === i;
+        const topBorder = isEnd ? 20 : 0;
+        const bottomBorder = 0;
+        data[j] = {
+          value: data[j],
+          itemStyle: {
+            borderRadius: [topBorder, topBorder, bottomBorder, bottomBorder]
+          }
+        };
+      }
+    }
+
+    option = {
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: series,
+      legend: { // 图例配置
+        data: ['俯卧撑', '仰卧起坐', '蹲起'],
+        bottom: 0 // 图例显示在底部
+      }
+    };
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

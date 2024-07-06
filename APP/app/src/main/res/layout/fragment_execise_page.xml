@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#dcdcdc"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/FWC"
+            style="@style/Custom.TabRadioButton"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_fwc"
+            android:scaleType="fitCenter"
+            android:text="俯卧撑" />
+        <RadioButton
+            android:id="@+id/DQ"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_dq"
+            android:scaleType="fitCenter"
+            android:text="蹲起" />
+        <RadioButton
+            android:id="@+id/YWQZ"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_ywqz"
+            android:scaleType="fitCenter"
+            android:text="引体向上" />
+    </RadioGroup>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+</LinearLayout>
+
+
+

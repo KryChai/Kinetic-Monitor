@@ -1,0 +1,150 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=gauge-ring
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <style>
+    #container {
+      background-color: #FAF3E0; /* 淡淡的米白色 */
+      border-radius: 60px; /* 圆角 */
+    }
+  </style>
+</head>
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%"></div>
+
+
+<script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+
+
+<script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    const gaugeData = [
+  {
+    value: 20,
+    name: '俯卧撑',
+    title: {
+      offsetCenter: ['0%', '-40%']
+    },
+    detail: {
+      valueAnimation: true,
+      offsetCenter: ['0%', '-25%']
+    }
+  },
+  {
+    value: 40,
+    name: '仰卧起坐',
+    title: {
+      offsetCenter: ['0%', '-10%']
+    },
+    detail: {
+      valueAnimation: true,
+      offsetCenter: ['0%', '5%']
+    }
+  },
+  {
+    value: 60,
+    name: '蹲起',
+    title: {
+      offsetCenter: ['0%', '20%']
+    },
+    detail: {
+      valueAnimation: true,
+      offsetCenter: ['0%', '35%']
+    }
+  }
+];
+option = {
+  series: [
+    {
+      type: 'gauge',
+      startAngle: 90,
+      endAngle: -270,
+      pointer: {
+        show: false
+      },
+      progress: {
+        show: true,
+        overlap: false,
+        roundCap: true,
+        clip: false,
+        itemStyle: {
+          borderWidth: 1,
+          borderColor: '#464646'
+        }
+      },
+      axisLine: {
+        lineStyle: {
+          width: 30
+        }
+      },
+      splitLine: {
+        show: false,
+        distance: 0,
+        length: 10
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: false,
+        distance: 50
+      },
+      data: gaugeData,
+      title: {
+        fontSize: 10 // 修改字体大小
+      },
+      detail: {
+        width: 25,
+        height: 5,
+        fontSize: 10, // 修改字体大小
+        color: 'inherit',
+        borderColor: 'inherit',
+        borderRadius: 20,
+        borderWidth: 1,
+        formatter: '{value}%'
+      },
+      // 图例配置
+      legend: {
+        orient: 'vertical',
+        x:'right',
+        y: 'middle',
+        itemGap: 3,
+        data: ['俯卧撑', '仰卧起坐', '蹲起']
+      }
+    }
+  ]
+};
+setInterval(function () {
+  myChart.setOption({
+    series: [
+      {
+        data: gaugeData,
+        pointer: {
+          show: false
+        }
+      }
+    ]
+  });
+}, 2000);
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', function() {
+      myChart.resize();
+    });
+  </script>
+</body>
+</html>

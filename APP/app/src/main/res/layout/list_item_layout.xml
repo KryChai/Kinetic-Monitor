@@ -1,0 +1,53 @@
+<!-- list_item_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="5dp"
+    android:background="@drawable/rounded_background_3">
+
+    <ImageView
+        android:id="@+id/list_item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="15dp"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp">
+
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/list_item_text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运动类型：俯卧撑，运动数量：20"
+            android:layout_marginBottom="5dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/list_item_text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运动时间：30 min"
+            android:layout_marginBottom="5dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/list_item_text_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始时间：2002：1118"
+
+            >
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>

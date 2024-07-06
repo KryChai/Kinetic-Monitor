@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/linen">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="50dp">
+            </View>
+            <LinearLayout
+                android:id="@+id/jksj_back"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="健康数据"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:typeface="normal" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+            </View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+            </View>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="今日活动"
+                android:textColor="@android:color/black"
+                android:padding="16dp"
+                android:background="@drawable/red_rounded_corner_bg"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="30dp"
+                android:layout_height="match_parent">
+            </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_background_2"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="273dp"
+                    android:layout_height="123dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal|center_vertical">
+
+
+                    <TextView
+                        android:id="@+id/num_show_fwc"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="俯卧撑 10 / 50 个" />
+
+                    <TextView
+                        android:id="@+id/num_show_ywqz"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="引体向上 4 / 10 个" />
+
+                    <TextView
+                        android:id="@+id/num_show_dq"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="蹲起 60 / 100 个" />
+
+                    <TextView
+                        android:id="@+id/num_show_ydsj"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="运动时间 224 s" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="30dp"
+                android:layout_height="match_parent">
+            </View>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp">
+                </View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="进度展示"
+                    android:textColor="@android:color/black"
+                    android:padding="16dp"
+                    android:background="@drawable/red_rounded_corner_bg"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal|center_vertical">
+
+
+                <WebView
+                    android:id="@+id/webviewdaliy"
+                    android:layout_width="237dp"
+                    android:layout_height="237dp"
+                    android:background="@drawable/rounded_background_2"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp">
+                </View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="运动周报"
+                    android:textColor="@android:color/black"
+                    android:padding="16dp"
+                    android:background="@drawable/red_rounded_corner_bg"
+                    android:layout_marginTop="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal|center_vertical">
+
+
+                <WebView
+                    android:id="@+id/webview_weekly"
+                    android:layout_width="300dp"
+                    android:layout_height="250dp"
+                    android:background="@drawable/rounded_background_2"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent">
+                </View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_background_2"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_marginTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="71dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/weekly_show_fwc"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="俯卧撑 150 个" />
+
+                        <TextView
+                            android:id="@+id/weekly_show_ywqz"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="仰卧起坐 314 个" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="71dp"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal|center_vertical">
+
+
+                        <TextView
+                            android:id="@+id/weekly_show_dq"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="蹲起 420 个" />
+
+                        <TextView
+                            android:id="@+id/weekly_show_ydsj"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="运动时间 1455 s" />
+                    </LinearLayout>
+
+
+
+                    </LinearLayout>
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent">
+                </View>
+            </LinearLayout>
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+            </View>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</LinearLayout>
